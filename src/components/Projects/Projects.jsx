@@ -216,7 +216,7 @@ const Projects = () => {
 
     return (
         <Container>
-        <Grid container  spacing={8} alignItems="center" justifyContent="center" className={classes.cont}>
+        <Grid container  spacing={6} alignItems="center" justifyContent="center" className={classes.cont}>
             <Grid item lg={6} xs={12}>
                
                     <Typography variant="h2" align="center" style={{paddingBottom: theme.spacing(5)}}>

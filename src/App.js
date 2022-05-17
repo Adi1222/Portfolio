@@ -6,8 +6,9 @@ import { createContext } from 'react';
 import Intro from "./components/Intro/Intro";
 import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
-export const ThemeContext = createContext();
+import Experience from './components/Experience/Experience';
 
+export const ThemeContext = createContext();
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Intro />
         <Skills />
         <Projects />
+        <Experience />
       </ThemeContext.Provider>
     </div>
   );
