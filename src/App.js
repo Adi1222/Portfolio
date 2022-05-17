@@ -7,6 +7,7 @@ import Intro from "./components/Intro/Intro";
 import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
 import Experience from './components/Experience/Experience';
+import Layout from './components/Layout/Layout';
 
 export const ThemeContext = createContext();
 
@@ -17,11 +18,13 @@ function App() {
   return (
     <div>
       <ThemeContext.Provider value={{theme}}>
-        <Navbar />
-        <Intro />
-        <Skills />
-        <Projects />
-        <Experience />
+      <Navbar />
+        <Layout>
+          <Intro />
+          <Skills />
+          <Projects />
+          <Experience />
+        </Layout>
       </ThemeContext.Provider>
     </div>
   );

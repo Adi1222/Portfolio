@@ -16,7 +16,8 @@ const Experience = () => {
 
 
     return (
-        <Container>
+        
+            <div id="experience">
             <Grid container  justifyContent='center' alignItems="center" spacing={2}>
                 <Grid item lg={6} xs={12}>
                     <Typography align="center" variant="h4">
@@ -91,9 +92,9 @@ const Experience = () => {
                     </Grid>
 
                 </Grid>
-                
             </Grid>
-        </Container>
+            </div>
+    
     )
 }
 

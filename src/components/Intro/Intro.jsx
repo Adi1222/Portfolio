@@ -52,7 +52,8 @@ const Intro = () => {
 
     
     return(
-        <Container>
+        
+        <div id="intro">
         <Grid container alignItems='center' justifyContent='center' className={classes.container}>
             <Grid item xs={12} lg={6} md={12}>
                 <motion.div
@@ -151,9 +152,9 @@ const Intro = () => {
                     </motion.div>
                 </Grid>
             </Hidden>
-            
         </Grid>
-        </Container>
+        </div>
+       
     )
 }
 

@@ -215,7 +215,8 @@ const Projects = () => {
 
 
     return (
-        <Container>
+        
+        <div id="projects">
         <Grid container  spacing={6} alignItems="center" justifyContent="center" className={classes.cont}>
             <Grid item lg={6} xs={12}>
                
@@ -292,7 +293,8 @@ const Projects = () => {
                 </Hidden>
             </Grid>
         </Grid>
-        </Container>
+        </div>
+        
     )
 }
 

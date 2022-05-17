@@ -6,6 +6,26 @@ const RightNavbar = ({toggleDrawer}) => {
 
     const classes = useStyles();
 
+    const tabs = [
+        {
+            name: "Skills",
+            href: "skills"
+        },
+        {
+            name: "Projects",
+            href: "projects"
+        },
+        {
+            name: "Experience",
+            href: "experience"
+        },
+        {
+            name: "About",
+            href: "experience"
+        }
+    ]
+
+
 
     return (    
     <div
@@ -20,9 +40,9 @@ const RightNavbar = ({toggleDrawer}) => {
                     <CloseIcon />        
                 </ListItemIcon>
             </ListItem>
-        {['Skills', 'Projects', 'Experience', 'About'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text}/>
+        {tabs.map(({name, href}, index) => (
+          <ListItem button key={name} component="a" href={`#${href}`}>
+            <ListItemText primary={name}/>
             <Divider />
           </ListItem>
         ))}

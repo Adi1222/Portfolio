@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AppBar, Hidden, IconButton, List, ListItem, ListItemText, SwipeableDrawer, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from '@material-ui/core';
+import { AppBar, Avatar, Hidden, IconButton, Link, List, ListItem, ListItemText, SwipeableDrawer, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from '@material-ui/core';
 import Brightness5Icon from '@material-ui/icons/Brightness5';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -35,21 +35,26 @@ const Navbar = () => {
 
     const tabs = [
         {
-            name: "Skills"
+            name: "Skills",
+            href: "skills"
         },
         {
-            name: "Projects"
+            name: "Projects",
+            href: "projects"
         },
         {
-            name: "Experience"
+            name: "Experience",
+            href: "experience"
         },
         {
-            name: "About"
+            name: "About",
+            href: "experience"
         }
     ]
 
     const handleChange = (event, newValue) => {
         setTabValue(newValue);
+        console.log(newValue);
     }
 
 
@@ -58,9 +63,9 @@ const Navbar = () => {
         <div className={classes.root}>
             <AppBar position='fixed' color='inherit'>
                         <Toolbar>
-                            <Typography color="inherit">
+                            <Link href="#intro" variant="h5" underline="none">
                                 Aditya Chavan
-                            </Typography>
+                            </Link>
                             <Hidden smDown>
                                 <Tabs
                                     value={tabValue}
@@ -70,10 +75,11 @@ const Navbar = () => {
                                     style={{flexGrow: 1}}
                                     centered
                                 >
-                                    <Tab label="skills" />
-                                    <Tab label="Projects" />
-                                    <Tab label="Experience" />
-                                    <Tab label="About" />
+                                    {
+                                        tabs.map(({name, href}, i) => (
+                                            <Tab label={name} value={i} href={`#${href}`}/>
+                                        ))
+                                    }
                                 </Tabs>
                             </Hidden>
                             <IconButton edge="end">
