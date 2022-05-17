@@ -239,7 +239,7 @@ const Skills = () => {
         <div ref={ref} id="skills">
             
             <Grid container alignItems="center" justifyContent='center' className={classes.cont}>
-                <Grid item lg={6} xs={12}>
+                <Grid item lg={6} xs={12} >
                     <motion.div
                         animate={animationSkills}
                     >
@@ -249,9 +249,21 @@ const Skills = () => {
                     </motion.div>
 
                     <Hidden mdDown>
-                        <div>
-                            <SkillsImg width="450px" height="450px" className={classes.img}/>
-                        </div>
+                        <motion.div
+                             whileInView={{
+                                opacity: [0,1],
+                                x: ["-40%", "0%"],
+                                transition: {delay: 0.7, duration: 0.8},
+                                
+                            
+                            }}
+                        >
+                            <div>
+                                <SkillsImg width="450px" height="450px" className={classes.img}/>
+                            </div>
+
+                        </motion.div>
+                      
                     </Hidden>
                 </Grid>
                 

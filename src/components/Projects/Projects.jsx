@@ -285,11 +285,21 @@ const Projects = () => {
                 
                 
             </Grid>
-            <Grid container item xs={12} lg={6}>
+            <Grid container item xs={12} lg={6} alignItems="center" justifyContent="center">
                 <Hidden mdDown>
-                    <div>
-                        <ProjectImg width="450px" height="450px" className={classes.img}/>
-                    </div>
+                    <motion.div
+                         whileInView={{
+                            opacity: [0,1],
+                            x: ["20%", "0%"],
+                            transition: {delay: 0.8, duration: 0.8},
+                            
+                        
+                        }}
+                    >
+                        <div>
+                            <ProjectImg width="450px" height="450px" className={classes.img}/>
+                        </div>
+                    </motion.div>
                 </Hidden>
             </Grid>
         </Grid>

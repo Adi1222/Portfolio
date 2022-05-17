@@ -110,7 +110,7 @@ const Intro = () => {
                                     whileInView={{
                                         opacity: [0,1],
                                         y: [0, -20],
-                                        transition: {delay: 1 + 0.5*i},
+                                        transition: {delay: 2 + 0.5*i},
                                         whileHover: {scale: 1.2}
                                     }}
                                 >
@@ -133,17 +133,11 @@ const Intro = () => {
             <Hidden mdDown>    
                 <Grid item lg={6}>
                     <motion.div
-                        initial={{
-                            opacity: 0,
-                            y: 50
-                        }}
-                        animate={{
-                            opacity: 1,
-                            y: -20,
-                            transition: {
-                                delay: 1.7,
-                                duration: 1.5
-                            }
+
+                        whileInView={{
+                            opacity: [0,1],
+                            y: [50, -20],
+                            transition: {delay: 1.3, duration: 1.5}
                         }}
                     >
                         <div>
