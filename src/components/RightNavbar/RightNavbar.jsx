@@ -21,7 +21,7 @@ const RightNavbar = ({toggleDrawer}) => {
         },
         {
             name: "About",
-            href: "experience"
+            href: "about"
         }
     ]
 

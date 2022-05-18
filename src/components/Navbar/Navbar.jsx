@@ -48,7 +48,7 @@ const Navbar = () => {
         },
         {
             name: "About",
-            href: "experience"
+            href: "about"
         }
     ]
 
