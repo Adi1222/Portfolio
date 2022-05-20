@@ -1,6 +1,7 @@
 import React from 'react';
 import { Avatar, Tooltip, Typography, Grid } from '@material-ui/core';
 import me from '../../images/me.jpg'
+import { motion} from 'framer-motion';
 
 const About = () => {
 
@@ -20,6 +21,43 @@ const About = () => {
         }
     ]
 
+    const aboutDetail = "Ever since I learnt C language (my first programming language) I was intrigued by the number of real world applications that we can solve with programming. So, I started digging deeper into the tech world and went on to build scalable we applications, participated in coding competitons and did internships. I dream to one day work on product which will be used by millions of people. Besides coding, I love to play Lawn Tennis, listen music (from Rock to synth-pop, I listen to all kinds of music) and read blogs."
+
+    const letters = Array.from(aboutDetail);
+
+    const container = {
+        hidden: {
+            opacity: 0
+        },
+        visible: i => ({
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.05
+            }
+        })
+    };
+
+    const letterVariants = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                damping: 12,
+                stiffness: 200
+            }
+        },
+        hidden: {
+            opacity: 0,
+            y: 20,
+            transition: {
+                type: "spring",
+                damping: 12,
+                stiffness: 200
+            }
+        }
+    }
+
     return (
         <div id="about">
             <Grid container justifyContent='center' alignItems="center">
@@ -28,9 +66,25 @@ const About = () => {
                         About Me
                     </Typography>
                     <Typography variant="h6" gutterBottom component="p">
-                        Ever since I learnt C language (my first programming language) I was intrigued by the number of real world applications that we can solve with programming. 
-                        So, I started digging deeper into the tech world and went on to build scalable we applications, participated in coding competitons and did internships.
-                        I dream to one day work on product which will be used by millions of people. Besides coding, I love to play Lawn Tennis, listen music (from Rock to synth-pop, I listen to all kinds of music) and read blogs. 
+                        <motion.div
+                            style={{ display: "flex", flexWrap: "wrap" }}
+                            variants={container}
+                            initial="hidden"
+                            animate={"visible"}
+                        >
+                            {
+                                letters.map((letter, index) => (
+                                    <motion.span
+                                        key={index}
+                                        variants={letterVariants}
+                                    >
+                                        {
+                                            letter === " " ? "\u00A0" : letter
+                                        }
+                                    </motion.span>
+                                ))
+                            }
+                        </motion.div>
                     </Typography>
                 </Grid>
                 <Grid container item direction="column" lg={6} xs={12} justifyContent="center" alignItems="center" spacing={6}>
