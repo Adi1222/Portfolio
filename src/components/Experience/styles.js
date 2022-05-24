@@ -15,14 +15,14 @@ export default makeStyles((theme) => (
         },
         card: {
 
-            width: '300px'
+           
         },
         cardActionArea: {
             height: '100%'
         },
         cardMedia: {
-            height: '300px',
-            
+            height: '57px',
+            width: '225px'
         }
     }
 ))

@@ -5,6 +5,7 @@ import useStyles from './styles';
 import { ReactComponent as ExperienceImg } from '../../images/experience.svg';
 import DateRangeTwoToneIcon from '@material-ui/icons/DateRangeTwoTone';
 import { LocationCity } from '@material-ui/icons';
+import { motion } from 'framer-motion';
 
 const Experience = () => {
 
@@ -13,7 +14,29 @@ const Experience = () => {
     const classes = useStyles();
 
     const mdDown = useMediaQuery(theme.breakpoints.down("md"));
+   
 
+    const experienceObj = [
+        {
+            "company": "Shyena Tech Yarns",
+            "role": "Web Developer",
+            "duration": "3 months",
+            "location": "Pune, India.",
+            "href": "https://shyenatechyarns.com/",
+            "img": "styr.jpg",
+            "range": "22-04-2020 - 31-7-2020"
+
+        },
+        {
+            "company": "UBS",
+            "role": "Technology Intern",
+            "duration": "2 months",
+            "location": "Pune, India.",
+            "href": "https://www.linkedin.com/company/ubs/?originalSubdomain=in",
+            "img": "ubs.png",
+            "range": "7-06-2021 - 7-6-2021"
+        }
+    ]
 
     return (
         
@@ -29,68 +52,102 @@ const Experience = () => {
                         </div>
                     </Hidden>
                 </Grid>
-                <Grid container item direction="row" alignItems="center0" lg={6} xs={12} spacing={5}>
-                <Grid item>
-                        <Card
-                            className={classes.card}
-                        >
-                            <CardActionArea
-                                href="/"
-                                target="_blank"
-                                className={classes.cardActionArea}
-                            >
-                                <CardHeader 
-                                    avatar={
-                                        <Avatar>
-                                            R
-                                        </Avatar>
-                                    }
-                                    title="Shyena Tech Yarns"
-                                    subheader="Web Developer"
-                                />
-                                 <CardMedia
-                                    className={classes.cardMedia}
-                                    image="../../images/sty.jpg"
-                                    title="sty"
-                                />
-                            </CardActionArea>
-                        </Card>
-                    </Grid>
-                    <Grid item>
-                        <Card>
-                            <CardActionArea
-                                href="/"
-                                target="_blank"
-                            >
-                                <CardHeader 
-                                    avatar={
-                                        <Avatar>
-                                            R
-                                        </Avatar>
-                                    }
-                                    title="Shyena Tech Yarns"
-                                    subheader="Web Developer"
-                                />
+                <Grid container item direction="row" alignItems="center" justifyContent='space-evenly' lg={6} xs={12} spacing={4}>
+                    {
+                        mdDown ?  experienceObj.map(({company, role, duration, location, range, href, img}, i) => (
+                            <Grid item key={i}>
+                                <motion.div
+                                    whileInView={{
+                                        opacity: [0,1],
+                                        x: [`${-70*Math.pow(-1, i)}%`, "0%"],
+                                        transition: {delay: 0.5 + 0.25*i, duration: 0.8},
+                                    
+                                    }}
+                                >
+                                    <Card
+                                        className={classes.card}
+                                    >
+                                        <CardActionArea
+                                            href={href}
+                                            target="_blank"
+                                            
+                                        >
+                                            <CardHeader 
+                                                title={company}
+                                                subheader={role}
+                                            />
+                                            <CardMedia
+                                                className={classes.cardMedia}
+                                                image={require(`../../images/${img}`)}
+                                                title={company}
+                                            />
+                                            <CardHeader
+                                                avatar={
+                                                    <DateRangeTwoToneIcon />
+                                                }
 
-                                <CardHeader
-                                    avatar={
-                                        <DateRangeTwoToneIcon />
-                                    }
-
-                                    title="3 months"
-                                    subheader="22-04-2020 - 31-7-2020"
-                                />
+                                                title={duration}
+                                                subheader={range}
+                                            />
+                                            
+                                            <CardHeader
+                                                avatar={
+                                                    <LocationCity />
+                                                }
+                                                subheader={location}
+                                            />
+                                        </CardActionArea>
+                                    </Card>
+                                </motion.div>
                                 
-                                <CardHeader
-                                    avatar={
-                                        <LocationCity />
-                                    }
-                                    subheader="Pune, India"
-                                />
-                            </CardActionArea>
-                        </Card>
-                    </Grid>
+                            </Grid>
+                        )) : experienceObj.map(({company, role, duration, location, range, href, img}, i) => (
+                            <Grid item key={i}>
+                                <motion.div
+                                    whileInView={{
+                                        opacity: [0, 1],
+                                        x: ["100%", "0%"],
+                                        transition: {delay: 0.5 + 0.25*i, duration: 0.8},
+                                    }}
+                                >
+                                    <Card
+                                        className={classes.card}
+                                    >
+                                        <CardActionArea
+                                            href={href}
+                                            target="_blank"
+                                            
+                                        >
+                                            <CardHeader 
+                                                title={company}
+                                                subheader={role}
+                                            />
+                                            <CardMedia
+                                                className={classes.cardMedia}
+                                                image={require(`../../images/${img}`)}
+                                                title={company}
+                                            />
+                                            <CardHeader
+                                                avatar={
+                                                    <DateRangeTwoToneIcon />
+                                                }
 
+                                                title={duration}
+                                                subheader={range}
+                                            />
+                                            
+                                            <CardHeader
+                                                avatar={
+                                                    <LocationCity />
+                                                }
+                                                subheader={location}
+                                            />
+                                        </CardActionArea>
+                                    </Card>
+                                </motion.div>
+                            </Grid>
+                        ))
+                    }
                 </Grid>
             </Grid>
             </div>
