@@ -220,7 +220,7 @@ const Projects = () => {
         <Grid container  spacing={6} alignItems="center" justifyContent="center" className={classes.cont}>
             <Grid item lg={6} xs={12}>
                
-                    <Typography variant="h2" align="center" style={{paddingBottom: theme.spacing(5)}}>
+                    <Typography variant="h2" align="center" style={{paddingBottom: theme.spacing(5), marginTop: theme.spacing(10)}}>
                         Projects
                     </Typography>
                 

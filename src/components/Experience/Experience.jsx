@@ -18,9 +18,9 @@ const Experience = () => {
     return (
         
             <div id="experience">
-            <Grid container  justifyContent='center' alignItems="center" spacing={2}>
+            <Grid container  justifyContent='center' alignItems="center" spacing={2} className={classes.cont}>
                 <Grid item lg={6} xs={12}>
-                    <Typography align="center" variant="h4">
+                    <Typography align="center" variant="h3" style={{marginTop: theme.spacing(10)}}>
                         Work Experience
                     </Typography>
                     <Hidden mdDown>

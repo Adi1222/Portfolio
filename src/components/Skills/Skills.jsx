@@ -243,7 +243,7 @@ const Skills = () => {
                     <motion.div
                         animate={animationSkills}
                     >
-                        <Typography variant="h2" align='center' style={{ paddingBottom: theme.spacing(5) }}>
+                        <Typography variant="h2" align='center' style={{ paddingBottom: theme.spacing(5),  marginTop: theme.spacing(10)}}>
                             Skills
                         </Typography>
                     </motion.div>

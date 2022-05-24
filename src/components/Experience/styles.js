@@ -3,8 +3,7 @@ import {makeStyles} from '@material-ui/core';
 export default makeStyles((theme) => (
     {
         cont: {
-            marginTop: theme.spacing(6),
-            maxWidth: 345,
+            minHeight: `calc(100vh - ${theme.spacing(2)}px)`
         },
         avatar: {
             padding: theme.spacing(1),
