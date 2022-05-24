@@ -99,6 +99,7 @@ const Navbar = () => {
                                             open={isDrawerOpen}
                                             onClose={toggleDrawer(false)}
                                             onOpen={toggleDrawer(true)}
+                                            
                                         >
                                             {
                                                 <RightNavbar toggleDrawer={toggleDrawer}/>

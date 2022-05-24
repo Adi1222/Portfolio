@@ -9,6 +9,7 @@ import Projects from './components/Projects/Projects';
 import Experience from './components/Experience/Experience';
 import Layout from './components/Layout/Layout';
 import About from './components/About/About';
+import Footer from './components/Footer/Footer';
 
 export const ThemeContext = createContext();
 
@@ -27,6 +28,7 @@ function App() {
           <Experience />
           <About />
         </Layout>
+        <Footer />
       </ThemeContext.Provider>
     </div>
   );
