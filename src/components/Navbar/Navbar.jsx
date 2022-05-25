@@ -67,7 +67,7 @@ const Navbar = () => {
         <div className={classes.root}>
             <AppBar position='fixed'>
                         <Toolbar>
-                            <Link href="#intro" variant="h5" underline="none" style={{color: theme.palette.primary.contrastText}}>
+                            <Link href="#intro" variant="h5" underline="none" style={{color: theme.palette.primary.contrastText, flexGrow: 1}}>
                                 Aditya Chavan
                             </Link>
                             <Hidden smDown>
@@ -100,6 +100,7 @@ const Navbar = () => {
                                         <IconButton
                                             color="inherit"
                                             onClick={toggleDrawer(true)}
+                                            
                                             
                                         >
                                             <MenuIcon />
