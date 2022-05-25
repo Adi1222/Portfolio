@@ -8,8 +8,8 @@ export default makeStyles((theme) => (
         },
         avatar: {
             padding: theme.spacing(2),
-            height: theme.spacing(4),
-            width: theme.spacing(4)
+            height: theme.spacing(8),
+            width: theme.spacing(8)
         },
         img: {
             display: "inlineblock"

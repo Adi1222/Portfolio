@@ -1,8 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import { createTheme, ThemeProvider} from '@material-ui/core';
-import { createContext } from 'react';
 import Intro from "./components/Intro/Intro";
 import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
@@ -11,15 +9,27 @@ import Layout from './components/Layout/Layout';
 import About from './components/About/About';
 import Footer from './components/Footer/Footer';
 
-export const ThemeContext = createContext();
+
+// export const ThemeContext = createContext();
 
 function App() {
 
-  const theme = createTheme();
+  //const theme = createTheme();
   
   return (
     <div>
-      <ThemeContext.Provider value={{theme}}>
+      <>
+        <Navbar />
+          <Layout>
+            <Intro />
+            <Skills />
+            <Projects />
+            <Experience />
+            <About />
+          </Layout>
+          <Footer />   
+      </>
+      {/* <ThemeContext.Provider value={{theme}}>
       <Navbar />
         <Layout>
           <Intro />
@@ -29,7 +39,7 @@ function App() {
           <About />
         </Layout>
         <Footer />
-      </ThemeContext.Provider>
+      </ThemeContext.Provider> */}
     </div>
   );
 }

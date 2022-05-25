@@ -1,7 +1,11 @@
 import React from 'react';
-import {Grid, Typography} from '@material-ui/core';
+import {Grid, Typography, useTheme} from '@material-ui/core';
+import { useThemeMode } from '../../Hooks/ThemeContext';
 
 const Footer = () => {
+    const theme = useTheme();
+
+    const {darkMode, toggleTheme} = useThemeMode();
     return (
         <div id="footer">
             <footer>

@@ -1,16 +1,20 @@
-import { Avatar, Grid, Hidden, Typography, useMediaQuery, Tooltip, Container} from '@material-ui/core';
+import { Avatar, Grid, Hidden, Typography, useMediaQuery, useTheme, Tooltip, Container} from '@material-ui/core';
 import React, { useContext } from 'react';
 import ReactTyped from 'react-typed';
 import useStyles from "./styles";
-import {ThemeContext} from '../../App';
 import {ReactComponent as Meundraw} from "../../images/meundraw.svg"
 import {motion} from 'framer-motion';
 import { Opacity } from '@material-ui/icons';
+import { ThemeContext } from '../../theme';
+import { useThemeMode } from '../../Hooks/ThemeContext';
 
 const Intro = () => {
 
     const classes = useStyles();
-    const {theme} = useContext(ThemeContext)
+
+    const {darkMode, toggleTheme} = useThemeMode();
+
+    const theme = useTheme();
 
     const smDown = useMediaQuery(theme.breakpoints.down('sm'));
     const mdDown = useMediaQuery(theme.breakpoints.down('md'));

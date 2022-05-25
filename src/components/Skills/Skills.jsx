@@ -1,14 +1,18 @@
-import { Avatar, Grid, Hidden, Tooltip, Typography, useMediaQuery, Zoom , Container } from '@material-ui/core';
+import { Avatar, Grid, Hidden, Tooltip, Typography, useMediaQuery, Zoom , Container, useTheme} from '@material-ui/core';
 import React, {useContext, useEffect} from 'react';
-import { ThemeContext } from '../../App';
+import { ThemeContext } from '../../theme';
 import useStyles from './styles';
 import { ReactComponent as SkillsImg } from '../../images/skills.svg';
 import { motion, useAnimation} from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useThemeMode } from '../../Hooks/ThemeContext';
+
 
 const Skills = () => {
 
-    const {theme} = useContext(ThemeContext);
+    const theme = useTheme();
+
+    const {darkMode, toggleTheme} = useThemeMode();
 
     const classes = useStyles();
 

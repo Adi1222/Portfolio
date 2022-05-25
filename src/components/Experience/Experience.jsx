@@ -1,15 +1,18 @@
 import React, {useContext} from 'react';
-import { ThemeContext } from '../../App';
-import { Avatar, Container, Card, CardActionArea, CardActions, CardContent, CardHeader, Grid, Hidden, Tooltip, Typography, useMediaQuery, CardMedia } from '@material-ui/core';
+import { ThemeContext } from '../../theme';
+import { useTheme, Avatar, Container, Card, CardActionArea, CardActions, CardContent, CardHeader, Grid, Hidden, Tooltip, Typography, useMediaQuery, CardMedia } from '@material-ui/core';
 import useStyles from './styles';
 import { ReactComponent as ExperienceImg } from '../../images/experience.svg';
 import DateRangeTwoToneIcon from '@material-ui/icons/DateRangeTwoTone';
 import { LocationCity } from '@material-ui/icons';
 import { motion } from 'framer-motion';
+import { useThemeMode } from '../../Hooks/ThemeContext';
 
 const Experience = () => {
 
-    const {theme} = useContext(ThemeContext);
+    const theme = useTheme();
+
+    const {darkMode, toggleTheme} = useThemeMode();
 
     const classes = useStyles();
 

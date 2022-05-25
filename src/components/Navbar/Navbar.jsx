@@ -3,15 +3,19 @@ import { AppBar, Avatar, Hidden, IconButton, Link, List, ListItem, ListItemText,
 import Brightness5Icon from '@material-ui/icons/Brightness5';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
 import MenuIcon from '@material-ui/icons/Menu';
-import { ThemeContext } from '../../App';
 import useStyles from "./styles"
 import RightNavbar from '../RightNavbar/RightNavbar';
+import { ThemeContext } from '../../theme';
+import { useThemeMode } from '../../Hooks/ThemeContext';
 
 const Navbar = () => {
 
     const classes = useStyles();
 
-    const {theme} = useContext(ThemeContext)
+    const {darkMode, toggleTheme} = useThemeMode();
+
+    // const {theme} = useContext(ThemeContext);
+    const theme = useTheme();
     const mdDown = useMediaQuery(theme.breakpoints.up('md'));
     const smDowm = useMediaQuery(theme.breakpoints.down('sm'));
     const smUp = useMediaQuery(theme.breakpoints.up('sm'));
@@ -61,16 +65,16 @@ const Navbar = () => {
 
     return (
         <div className={classes.root}>
-            <AppBar position='fixed' color='inherit'>
+            <AppBar position='fixed'>
                         <Toolbar>
-                            <Link href="#intro" variant="h5" underline="none">
+                            <Link href="#intro" variant="h5" underline="none" style={{color: theme.palette.primary.contrastText}}>
                                 Aditya Chavan
                             </Link>
                             <Hidden smDown>
                                 <Tabs
                                     value={tabValue}
                                     onChange={handleChange}
-                                    textColor="primary"
+                                    textColor={theme.palette.primary.contrastText}
                                     indicatorColor="primary"
                                     style={{flexGrow: 1}}
                                     centered
@@ -82,8 +86,14 @@ const Navbar = () => {
                                     }
                                 </Tabs>
                             </Hidden>
-                            <IconButton edge="end">
-                                <Brightness5Icon />
+                            <IconButton edge="end" onClick={() => toggleTheme()}>
+                                {
+                                    darkMode ? (
+                                        <Brightness5Icon />
+                                    ) : (
+                                        <Brightness7Icon />
+                                    )
+                                }
                             </IconButton>
                             <Hidden mdUp>
                                 <React.Fragment>

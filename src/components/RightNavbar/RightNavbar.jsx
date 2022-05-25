@@ -1,10 +1,16 @@
 import React from 'react';
-import { AppBar, Avatar, Divider, Hidden, IconButton, List, ListItem, ListItemAvatar, ListItemIcon, ListItemText, SwipeableDrawer, Tab, Tabs, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, useTheme, Avatar, Divider, Hidden, IconButton, List, ListItem, ListItemAvatar, ListItemIcon, ListItemText, SwipeableDrawer, Tab, Tabs, Toolbar, Typography } from '@material-ui/core';
 import useStyles from "./styles"
 import CloseIcon from '@material-ui/icons/Close';
+import { useThemeMode } from '../../Hooks/ThemeContext';
+
+
 const RightNavbar = ({toggleDrawer}) => {
 
     const classes = useStyles();
+    const theme = useTheme();
+
+    const {darkMode, toggleTheme} = useThemeMode();
 
     const tabs = [
         {

@@ -1,18 +1,20 @@
 import React, { useContext } from 'react';
-import { Avatar, Tooltip, Typography, Grid } from '@material-ui/core';
+import { Avatar, Tooltip, Typography, Grid, useTheme } from '@material-ui/core';
 import me from '../../images/me.jpg'
 import { motion} from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ThemeContext } from '../../App';
+import { ThemeContext } from '../../theme';
 import useStyles from './styles';
-
+import { useThemeMode } from '../../Hooks/ThemeContext';
 
 
 const About = () => {
 
     const { ref, inView } = useInView();    
 
-    const {theme} = useContext(ThemeContext);
+    const theme = useTheme();
+
+    const {darkMode, toggleTheme} = useThemeMode();
 
     const classes = useStyles();
 

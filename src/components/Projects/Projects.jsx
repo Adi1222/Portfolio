@@ -1,12 +1,17 @@
 import React, { useContext } from 'react';
-import { Avatar, Container, Card, CardActionArea, CardActions, CardContent, CardHeader, Grid, Hidden, Tooltip, Typography, useMediaQuery } from '@material-ui/core';
-import { ThemeContext } from '../../App';
+import { Avatar, usetheme, Container, Card, CardActionArea, CardActions, CardContent, CardHeader, Grid, Hidden, Tooltip, Typography, useMediaQuery, useTheme} from '@material-ui/core';
+import { ThemeContext } from '../../theme';
 import useStyles from './styles';
 import { ReactComponent as ProjectImg } from '../../images/projects.svg';
 import {motion} from 'framer-motion';
+import { useThemeMode } from '../../Hooks/ThemeContext';
+
+
 const Projects = () => {
 
-    const {theme} = useContext(ThemeContext);
+    const theme = useTheme();
+
+    const {darkMode, toggleTheme} = useThemeMode();
 
     const classes = useStyles();
 
