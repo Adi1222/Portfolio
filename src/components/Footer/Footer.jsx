@@ -6,10 +6,12 @@ const Footer = () => {
     const theme = useTheme();
 
     const {darkMode, toggleTheme} = useThemeMode();
+    
+
     return (
         <div id="footer">
             <footer>
-                <Grid  style={{backgroundColor: "#5e35b1", height: "50px"}}>
+                <Grid  style={{backgroundColor: '#283593' , height: "50px"}}>
                     <Typography align="center" style={{paddingTop: "10px"}}>
                         Made with ❤️ by Aditya Chavan
                     </Typography>

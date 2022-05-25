@@ -78,7 +78,23 @@ const About = () => {
                     <Typography variant="h2" gutterBottom align='center'>
                         About Me
                     </Typography>
-                    {
+
+                    <motion.div
+                    
+                        whileInView={{
+                            opacity: [0,1],
+                            y: [0, -20],
+                            transition: {delay: 1 , duration: 0.5}
+                        }}
+                        
+                    >
+                        <Typography variant="h6" gutterBottom component="p">
+                            {
+                                aboutDetail
+                            }
+                        </Typography>
+                    </motion.div>
+                    {/* {
                         inView === true ? 
                         <Typography variant="h6" gutterBottom component="p">
                             <motion.div
@@ -102,7 +118,7 @@ const About = () => {
                             </motion.div>
                         </Typography>
                         : null
-                    }
+                    } */}
                 </Grid>
                 <Grid container item direction="column" lg={6} xs={12} justifyContent="center" alignItems="center" spacing={6}>
                     <Grid item>
@@ -115,7 +131,7 @@ const About = () => {
                                     <Grid item key={i}>
                                         <a href={href} target="_blank">
                                             <Tooltip title={title}>
-                                                <Avatar variant='rounded' style={{backgroundColor: `${bg}`}} >
+                                                <Avatar variant='rounded' style={{backgroundColor: `${bg}`, marginBottom: theme.spacing(5)}} >
                                                     <svg  width={"30px"} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                                         <title>{title}</title>
                                                         <path d={path} fill="white"/>

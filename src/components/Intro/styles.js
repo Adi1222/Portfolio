@@ -13,7 +13,7 @@ export default makeStyles((theme) => (
         },
         title: {
             marginTop: theme.spacing(0),
-            marginBottom: theme.spacing(2)
+            marginBottom: theme.spacing(5)
         },
         img: {
             display: "inlineblock"

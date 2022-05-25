@@ -7,8 +7,11 @@ import {motion} from 'framer-motion';
 import { Opacity } from '@material-ui/icons';
 import { ThemeContext } from '../../theme';
 import { useThemeMode } from '../../Hooks/ThemeContext';
+import { useInView } from 'react-intersection-observer';
 
 const Intro = () => {
+
+    const { ref, inView } = useInView(); 
 
     const classes = useStyles();
 
@@ -22,6 +25,45 @@ const Intro = () => {
     const alignIcons = mdDown ? "center" : "left";
 
     const alignTitle = mdDown ? "center" : "left";
+
+    const meDetail = "I am Aditya Chavan."
+
+    const letters = Array.from(meDetail);
+
+    const container = {
+        hidden: {
+            opacity: 0
+        },
+        visible: i => ({
+            opacity: 1,
+            transition: {
+                
+                staggerChildren: 0.09
+            }
+        })
+    };
+
+    const letterVariants = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                
+                type: "spring",
+                damping: 12,
+                stiffness: 200
+            }
+        },
+        hidden: {
+            opacity: 0,
+            y: 20,
+            transition: {
+                type: "spring",
+                damping: 12,
+                stiffness: 200
+            }
+        }
+    }
 
 
     const socialMediaDetails = [
@@ -70,7 +112,7 @@ const Intro = () => {
     
     return(
         
-        <div id="intro">
+        <div ref={ref} id="intro">
         <Grid container alignItems='center' justifyContent='center' className={classes.container}>
             <Grid item xs={12} lg={6} md={12}>
                 <motion.div
@@ -97,6 +139,35 @@ const Intro = () => {
                         I am Aditya Chavan.
                     </Typography>
                 </motion.div>
+
+                {/* {
+                    inView === true ? 
+                    <Typography variant={smDown? "h3" : "h2"} className={classes.title} align={alignTitle}>
+                        <motion.div
+                                style={{ display: "flex" }}
+                                variants={container}
+                                initial="hidden"
+                                animate={"visible"}
+                                
+                
+                            >
+                                {
+                                    letters.map((letter, index) => (
+                                        <motion.span
+                                            key={index}
+                                            variants={letterVariants}
+                                        >
+                                            {
+                                                letter === " " ? "\u00A0" : letter
+                                            }
+                                        </motion.span>
+                                    ))
+                                }
+                            </motion.div>
+                    </Typography> : null
+                } */}
+
+                    
                 <motion.div
                     whileInView={{
                         opacity: [0,1],
