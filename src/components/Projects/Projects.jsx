@@ -223,7 +223,107 @@ const Projects = () => {
     return (
         
         <div id="projects">
-        <Grid container  spacing={6} alignItems="center" justifyContent="center" className={classes.cont}>
+
+        <Grid  direction="row-reverse" container justify="center" alignItems="center" spacing={6}  className={classes.cont}>
+
+            <Grid item xs={12} lg={6} >
+                <Typography variant="h2" align="center" style={{paddingBottom: theme.spacing(5), marginTop: theme.spacing(10)}}>
+                                Projects
+                </Typography>
+                <Hidden mdDown>
+                    <motion.div
+                         whileInView={{
+                            opacity: [0,1],
+                            x: ["20%", "0%"],
+                            transition: {delay: 0.8, duration: 0.8},
+                            
+                        
+                        }}
+                    >
+                        {
+                            darkMode === true ? 
+                            (
+                                <div>
+                                    <ProjectSvg width="450px" height="450px" className={classes.img}/>
+                                </div>
+                            ) : 
+                            (
+                                <div>
+                                    <ProjectImg width="450px" height="450px" className={classes.img}/>
+                                </div>
+                            )
+                        }
+
+                    </motion.div>
+                </Hidden>
+            </Grid>
+
+            <Grid container item xs={12} lg={6}  spacing={4}>
+               
+                    {
+                        Object.getOwnPropertyNames(projectObj).map((project, i) => (
+                            
+                                <Grid item sm={6} xs={12} key={i} >
+                                    <motion.div
+                                        whileInView={{
+                                            opacity: [0,1],
+                                            x: ["-50%", "0%"],
+                                            transition: {delay: 0.5 + 0.25*i, duration: 0.8},
+                                            whileHover: {scale: 2}
+                                        
+                                        }}
+                                       
+                                        
+                                    >
+                                    <Card
+                                        key={i}
+                                        className={classes.card}
+                                    >
+                                        <CardActionArea
+                                            href={projectObj[project]["link"]}
+                                            target="_blank"
+                                            className={classes.cardActionArea}
+                                        >
+                                            <CardHeader
+                                                title={projectObj[project]["name"]}
+                                            />
+                                            <CardContent>
+                                                <Typography component="p">
+                                                {projectObj[project]["description"]}
+                                                </Typography>
+                                            </CardContent>
+                                            <CardActions>
+                                                <Grid container direction='row' spacing={1}>
+                                                    {
+                                                        projectObj[project]["techstack"].map(({icon, alt, path, title, bg}, index) => (
+                                                            <Grid item key={index}>
+                                                                <Tooltip title={title}>
+                                                                    <Avatar  variant="rounded" style={{backgroundColor: `${bg}`}}   className={classes.avatar}>
+                                                                        <svg  width={"20px"} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                                                <title>{title}</title>
+                                                                                <path d={path} fill="white"/>
+                                                                        </svg>
+                                                                    </Avatar>
+                                                                </Tooltip>
+                                                            </Grid>
+                                                        ))
+                                                    }
+                                                </Grid>       
+                                            </CardActions>
+                                        </CardActionArea>
+                                    </Card>
+                                    </motion.div>
+                                </Grid>
+                        ))
+                    }
+                
+                
+                
+            </Grid>
+        
+        </Grid>
+
+        {/* <Grid container  spacing={6} alignItems="center" justifyContent="center" className={classes.cont}>
             <Grid item lg={6} xs={12}>
                
                     <Typography variant="h2" align="center" style={{paddingBottom: theme.spacing(5), marginTop: theme.spacing(10)}}>
@@ -319,7 +419,7 @@ const Projects = () => {
                     </motion.div>
                 </Hidden>
             </Grid>
-        </Grid>
+        </Grid> */}
         </div>
         
     )
