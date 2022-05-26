@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Intro from "./components/Intro/Intro";
 import Skills from './components/Skills/Skills';
@@ -18,28 +18,16 @@ function App() {
   
   return (
     <div>
-      <>
-        <Navbar />
+      <Navbar />
           <Layout>
-            <Intro />
+          <Intro />
             <Skills />
             <Projects />
             <Experience />
             <About />
           </Layout>
           <Footer />   
-      </>
-      {/* <ThemeContext.Provider value={{theme}}>
-      <Navbar />
-        <Layout>
-          <Intro />
-          <Skills />
-          <Projects />
-          <Experience />
-          <About />
-        </Layout>
-        <Footer />
-      </ThemeContext.Provider> */}
+      
     </div>
   );
 }

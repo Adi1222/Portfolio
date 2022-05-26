@@ -230,7 +230,7 @@ const Projects = () => {
                         Projects
                     </Typography>
                 
-                <Grid container item spacing={4}  >
+                <Grid container item spacing={2} alignItems="center" >
                     {
                         Object.getOwnPropertyNames(projectObj).map((project, i) => (
                             
