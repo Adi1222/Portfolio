@@ -260,6 +260,7 @@ const Projects = () => {
 
             <Grid container item xs={12} lg={6}  spacing={4}>
                
+                
                     {
                         Object.getOwnPropertyNames(projectObj).map((project, i) => (
                             
