@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AppBar, Avatar, Hidden, IconButton, Link, List, ListItem, ListItemText, SwipeableDrawer, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from '@material-ui/core';
 import Brightness5Icon from '@material-ui/icons/Brightness5';
-import Brightness7Icon from '@material-ui/icons/Brightness7';
 import MenuIcon from '@material-ui/icons/Menu';
 import useStyles from "./styles"
 import RightNavbar from '../RightNavbar/RightNavbar';
 import { ThemeContext } from '../../theme';
 import { useThemeMode } from '../../Hooks/ThemeContext';
+import Brightness3Icon from '@material-ui/icons/Brightness3';
 
 const Navbar = () => {
 
@@ -86,12 +86,12 @@ const Navbar = () => {
                                     }
                                 </Tabs>
                             </Hidden>
-                            <IconButton edge="end" onClick={() => toggleTheme()}>
+                            <IconButton edge="end" color='inherit' onClick={() => toggleTheme()}>
                                 {
                                     darkMode ? (
-                                        <Brightness5Icon />
+                                        <Brightness3Icon />
                                     ) : (
-                                        <Brightness7Icon />
+                                        <Brightness5Icon />
                                     )
                                 }
                             </IconButton>

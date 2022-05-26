@@ -247,7 +247,7 @@ const Projects = () => {
                                     >
                                     <Card
                                         key={i}
-                                        
+                                        className={classes.card}
                                     >
                                         <CardActionArea
                                             href={projectObj[project]["link"]}

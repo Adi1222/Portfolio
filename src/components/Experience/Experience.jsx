@@ -1,12 +1,13 @@
 import React, {useContext} from 'react';
 import { ThemeContext } from '../../theme';
-import { useTheme, Avatar, Container, Card, CardActionArea, CardActions, CardContent, CardHeader, Grid, Hidden, Tooltip, Typography, useMediaQuery, CardMedia } from '@material-ui/core';
+import { useTheme, Avatar, Container, Card, CardActionArea, CardActions, CardContent, CardHeader, Paper, Grid, Hidden, Tooltip, Typography, useMediaQuery, CardMedia } from '@material-ui/core';
 import useStyles from './styles';
 import { ReactComponent as ExperienceImg } from '../../images/experience.svg';
 import DateRangeTwoToneIcon from '@material-ui/icons/DateRangeTwoTone';
 import { LocationCity } from '@material-ui/icons';
 import { motion } from 'framer-motion';
 import { useThemeMode } from '../../Hooks/ThemeContext';
+import GlassCard from '../GlassCard/GlassCard';
 
 const Experience = () => {
 
@@ -67,40 +68,43 @@ const Experience = () => {
                                     
                                     }}
                                 >
-                                    <Card
-                                        className={classes.card}
+                                    
+                                <Card
+                                    className={classes.card}
+                                    
+                                >
+                                    <CardActionArea
+                                        href={href}
+                                        target="_blank"
+                                        
                                     >
-                                        <CardActionArea
-                                            href={href}
-                                            target="_blank"
-                                            
-                                        >
-                                            <CardHeader 
-                                                title={company}
-                                                subheader={role}
-                                            />
-                                            <CardMedia
-                                                className={classes.cardMedia}
-                                                image={require(`../../images/${img}`)}
-                                                title={company}
-                                            />
-                                            <CardHeader
-                                                avatar={
-                                                    <DateRangeTwoToneIcon />
-                                                }
+                                        <CardHeader 
+                                            title={company}
+                                            subheader={role}
+                                        />
+                                        <CardMedia
+                                            className={classes.cardMedia}
+                                            image={require(`../../images/${img}`)}
+                                            title={company}
+                                        />
+                                        <CardHeader
+                                            avatar={
+                                                <DateRangeTwoToneIcon />
+                                            }
 
-                                                title={duration}
-                                                subheader={range}
-                                            />
-                                            
-                                            <CardHeader
-                                                avatar={
-                                                    <LocationCity />
-                                                }
-                                                subheader={location}
-                                            />
-                                        </CardActionArea>
-                                    </Card>
+                                            title={duration}
+                                            subheader={range}
+                                        />
+                                        
+                                        <CardHeader
+                                            avatar={
+                                                <LocationCity />
+                                            }
+                                            subheader={location}
+                                        />
+                                    </CardActionArea>
+                                </Card>
+                                    
                                 </motion.div>
                                 
                             </Grid>
