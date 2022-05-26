@@ -3,6 +3,7 @@ import { Avatar, usetheme, Container, Card, CardActionArea, CardActions, CardCon
 import { ThemeContext } from '../../theme';
 import useStyles from './styles';
 import { ReactComponent as ProjectImg } from '../../images/projects.svg';
+import { ReactComponent as ProjectSvg } from '../../images/darktheme/projectsvg.svg';
 import {motion} from 'framer-motion';
 import { useThemeMode } from '../../Hooks/ThemeContext';
 
@@ -301,9 +302,20 @@ const Projects = () => {
                         
                         }}
                     >
-                        <div>
-                            <ProjectImg width="450px" height="450px" className={classes.img}/>
-                        </div>
+                        {
+                            darkMode === true ? 
+                            (
+                                <div>
+                                    <ProjectSvg width="450px" height="450px" className={classes.img}/>
+                                </div>
+                            ) : 
+                            (
+                                <div>
+                                    <ProjectImg width="450px" height="450px" className={classes.img}/>
+                                </div>
+                            )
+                        }
+
                     </motion.div>
                 </Hidden>
             </Grid>

@@ -1,8 +1,9 @@
 import { Avatar, Grid, Hidden, Typography, useMediaQuery, useTheme, Tooltip, Container} from '@material-ui/core';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import ReactTyped from 'react-typed';
 import useStyles from "./styles";
 import {ReactComponent as Meundraw} from "../../images/meundraw.svg"
+import {ReactComponent as Introsvg} from "../../images/darktheme/introsvg.svg"
 import {motion} from 'framer-motion';
 import { Opacity } from '@material-ui/icons';
 import { ThemeContext } from '../../theme';
@@ -29,6 +30,10 @@ const Intro = () => {
     const meDetail = "I am Aditya Chavan."
 
     const letters = Array.from(meDetail);
+
+    // useEffect(() => {
+    //     console.log("darkmode: " + darkMode);
+    // })
 
     const container = {
         hidden: {
@@ -228,9 +233,21 @@ const Intro = () => {
                             transition: {delay: 1.3, duration: 1.5}
                         }}
                     >
-                        <div>
-                            <Meundraw width="570px" height="570px" className={classes.img}/>
-                        </div>
+                        {
+                            darkMode === true ? 
+                            (
+                                <div>
+                                    <Introsvg width="570px" height="570px" className={classes.img}/>
+                                </div>
+                            )
+                            :
+                            (
+
+                                <div>
+                                    <Meundraw width="570px" height="570px" className={classes.img}/>
+                                </div>
+                            )
+                        }
                     </motion.div>
                 </Grid>
             </Hidden>

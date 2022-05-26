@@ -3,6 +3,7 @@ import { ThemeContext } from '../../theme';
 import { useTheme, Avatar, Container, Card, CardActionArea, CardActions, CardContent, CardHeader, Paper, Grid, Hidden, Tooltip, Typography, useMediaQuery, CardMedia } from '@material-ui/core';
 import useStyles from './styles';
 import { ReactComponent as ExperienceImg } from '../../images/experience.svg';
+import { ReactComponent as ExperienceSvg } from '../../images/darktheme/experience.svg';
 import DateRangeTwoToneIcon from '@material-ui/icons/DateRangeTwoTone';
 import { LocationCity } from '@material-ui/icons';
 import { motion } from 'framer-motion';
@@ -51,9 +52,19 @@ const Experience = () => {
                         Work Experience
                     </Typography>
                     <Hidden mdDown>
-                        <div>
-                            <ExperienceImg width="550px" height="550px" className={classes.img}/>
-                        </div>
+                        {
+                            darkMode === true ? 
+                            (
+                                <div>
+                                    <ExperienceSvg width="550px" height="550px" className={classes.img}/>
+                                </div>
+                            ) : 
+                            (
+                                <div>
+                                    <ExperienceImg width="550px" height="550px" className={classes.img}/>
+                                </div>
+                            )
+                        }
                     </Hidden>
                 </Grid>
                 <Grid container item direction="row" alignItems="center" justifyContent='space-evenly' lg={6} xs={12} spacing={4}>

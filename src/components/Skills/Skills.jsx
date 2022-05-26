@@ -3,6 +3,7 @@ import React, {useContext, useEffect} from 'react';
 import { ThemeContext } from '../../theme';
 import useStyles from './styles';
 import { ReactComponent as SkillsImg } from '../../images/skills.svg';
+import { ReactComponent as Skillssvg } from '../../images/darktheme/skillssvg.svg';
 import { motion, useAnimation} from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useThemeMode } from '../../Hooks/ThemeContext';
@@ -262,9 +263,21 @@ const Skills = () => {
                             
                             }}
                         >
-                            <div>
-                                <SkillsImg width="450px" height="450px" className={classes.img}/>
-                            </div>
+                            {
+                                darkMode === true ? 
+                                (
+                                    <div>
+                                        <Skillssvg width="570px" height="570px" className={classes.img}/>
+                                    </div>
+                                )
+                                :
+                                (
+
+                                    <div>
+                                        <SkillsImg width="570px" height="570px" className={classes.img}/>
+                                    </div>
+                                )
+                            }
 
                         </motion.div>
                       

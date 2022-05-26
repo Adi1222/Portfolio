@@ -2,7 +2,7 @@ export const dark ={
     palette: {
         type: 'dark',
         primary: {
-            main: '#80d8ff'
+            main: '#4fc3f7'
         }
     }
 };
