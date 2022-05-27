@@ -1,4 +1,6 @@
 ## My Portfolio
+![visitors](https://visitor-badge.glitch.me/badge?page_id=Adi1222.Portfolio)
+
 
 ### Tech Stack
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
