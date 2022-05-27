@@ -9,6 +9,7 @@
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 
 
+### How to run
 <li>Clone this repo:
 
 ```$xslt
@@ -29,4 +30,4 @@ yarn install
 npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) on your browser to see the result.
+<li> Open [http://localhost:3000](http://localhost:3000) on your browser to see the result.
