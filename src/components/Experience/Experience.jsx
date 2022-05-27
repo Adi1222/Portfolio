@@ -23,16 +23,6 @@ const Experience = () => {
 
     const experienceObj = [
         {
-            "company": "Shyena Tech Yarns",
-            "role": "Web Developer",
-            "duration": "3 months",
-            "location": "Pune, India.",
-            "href": "https://shyenatechyarns.com/",
-            "img": "styr.jpg",
-            "range": "22-04-2020 - 31-7-2020"
-
-        },
-        {
             "company": "UBS",
             "role": "Technology Intern",
             "duration": "2 months",
@@ -40,6 +30,15 @@ const Experience = () => {
             "href": "https://www.linkedin.com/company/ubs/?originalSubdomain=in",
             "img": "ubs.png",
             "range": "7-06-2021 - 7-6-2021"
+        },
+        {
+            "company": "Shyena Tech Yarns",
+            "role": "Web Developer",
+            "duration": "3 months",
+            "location": "Pune, India.",
+            "href": "https://shyenatechyarns.com/",
+            "img": "styr.jpg",
+            "range": "22-04-2020 - 31-7-2020"
         }
     ]
 
