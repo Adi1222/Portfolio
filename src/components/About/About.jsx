@@ -34,7 +34,7 @@ const About = () => {
         }
     ]
 
-    const aboutDetail = "I am a final year undergrad student pursuing a bachelor's in Computer Engineering from the Pune Institute of Computer Technology. Ever since I learned C language (my first programming language) I was intrigued by the number of real-world applications that we can solve with programming. So, I started digging deeper into the tech world and went on to build scalable web applications, participated in coding competitions, and did internships. I dream of one day working on a product that will be used by millions of people. Besides coding, I love to play Lawn Tennis, listen to music (from Rock to synth-pop, I listen to all kinds of music) and read blogs."
+    const aboutDetail = "I am a final year undergrad student pursuing a bachelor's in Computer Engineering from  Pune Institute of Computer Technology. Ever since I learned C language (my first programming language) I was intrigued by the number of real-world applications that we can solve with programming. So, I started digging deeper into the tech world and went on to build scalable web applications, participated in coding competitions, and did internships. I dream of one day working on a product that will be used by millions of people. Besides coding, I love to play Lawn Tennis, listen to music (from Rock to synth-pop, I listen to all kinds of music) and read blogs."
 
     const letters = Array.from(aboutDetail);
 
