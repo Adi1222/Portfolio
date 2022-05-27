@@ -17,7 +17,7 @@ function App() {
   //const theme = createTheme();
   
   return (
-    <div>
+    <div style={{ overflowX: "hidden"}}>
       <Navbar />
           <Layout>
           <Intro />

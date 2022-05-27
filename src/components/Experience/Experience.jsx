@@ -46,7 +46,8 @@ const Experience = () => {
     return (
         
             <div id="experience">
-            <Grid container  justifyContent='center' alignItems="center" spacing={2} className={classes.cont}>
+            
+            <Grid container  justifyContent='center' alignItems="center" spacing={0} className={classes.cont}>
                 <Grid item lg={6} xs={12}>
                     <Typography align="center" variant="h3" style={{marginTop: theme.spacing(10)}}>
                         Work Experience
@@ -67,7 +68,7 @@ const Experience = () => {
                         }
                     </Hidden>
                 </Grid>
-                <Grid container item direction="row" alignItems="center" justifyContent='space-evenly' lg={6} xs={12} spacing={4}>
+                <Grid container item direction="row" alignItems="center" justifyContent='space-evenly' lg={6} xs={12} spacing={2}>
                     {
                         mdDown ?  experienceObj.map(({company, role, duration, location, range, href, img}, i) => (
                             <Grid item key={i}>

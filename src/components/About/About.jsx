@@ -72,7 +72,8 @@ const About = () => {
     }
 
     return (
-        <div ref={ref} id="about">
+        <div ref={ref} id="about" >
+            
             <Grid container justifyContent='center' alignItems="center" className={classes.cont}>
                 <Grid item lg={6} xs={12}>
                     <Typography variant="h2" gutterBottom align='center'>

@@ -64,7 +64,7 @@ const Navbar = () => {
 
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} >
             <AppBar position='fixed'>
                         <Toolbar>
                             <Link href="#intro" variant="h5" underline="none" style={{color: theme.palette.primary.contrastText, flexGrow: 1}}>

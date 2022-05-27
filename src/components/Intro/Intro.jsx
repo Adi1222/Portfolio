@@ -117,141 +117,142 @@ const Intro = () => {
     
     return(
         
-        <div ref={ref} id="intro">
-        <Grid container alignItems='center' justifyContent='center' className={classes.container}>
-            <Grid item xs={12} lg={6} md={12}>
-                <motion.div
-                    
-                    whileInView={{
-                        opacity: [0,1],
-                        y: [0, -20],
-                        transition: {delay: 0.5 , duration: 0.5}
-                    }}
-                >
-                    <Typography variant={smDown? "h3" : "h2"} align={alignTitle}>
-                            Hi👋
-                    </Typography>
-                </motion.div>
-                <motion.div
-                    
-                    whileInView={{
-                        opacity: [0,1],
-                        y: [0, -20],
-                        transition: {delay: 1 , duration: 0.5}
-                    }}
-                >
-                    <Typography variant={smDown? "h3" : "h2"} className={classes.title} align={alignTitle}>
-                        I am Aditya Chavan.
-                    </Typography>
-                </motion.div>
-
-                {/* {
-                    inView === true ? 
-                    <Typography variant={smDown? "h3" : "h2"} className={classes.title} align={alignTitle}>
+        <div ref={ref} id="intro" >
+            
+                <Grid container alignItems='center' justifyContent='center' className={classes.container}>
+                    <Grid item xs={12} lg={6} md={12}>
                         <motion.div
-                                style={{ display: "flex" }}
-                                variants={container}
-                                initial="hidden"
-                                animate={"visible"}
-                                
-                
+                            
+                            whileInView={{
+                                opacity: [0,1],
+                                y: [0, -20],
+                                transition: {delay: 0.5 , duration: 0.5}
+                            }}
+                        >
+                            <Typography variant={smDown? "h3" : "h2"} align={alignTitle}>
+                                    Hi👋
+                            </Typography>
+                        </motion.div>
+                        <motion.div
+                            
+                            whileInView={{
+                                opacity: [0,1],
+                                y: [0, -20],
+                                transition: {delay: 1 , duration: 0.5}
+                            }}
+                        >
+                            <Typography variant={smDown? "h3" : "h2"} className={classes.title} align={alignTitle}>
+                                I am Aditya Chavan.
+                            </Typography>
+                        </motion.div>
+
+                        {/* {
+                            inView === true ? 
+                            <Typography variant={smDown? "h3" : "h2"} className={classes.title} align={alignTitle}>
+                                <motion.div
+                                        style={{ display: "flex" }}
+                                        variants={container}
+                                        initial="hidden"
+                                        animate={"visible"}
+                                        
+                        
+                                    >
+                                        {
+                                            letters.map((letter, index) => (
+                                                <motion.span
+                                                    key={index}
+                                                    variants={letterVariants}
+                                                >
+                                                    {
+                                                        letter === " " ? "\u00A0" : letter
+                                                    }
+                                                </motion.span>
+                                            ))
+                                        }
+                                    </motion.div>
+                            </Typography> : null
+                        } */}
+
+                            
+                        <motion.div
+                            whileInView={{
+                                opacity: [0,1],
+                                y: [0, -20],
+                                transition: {delay: 1.5 , duration: 0.5}
+                            }}
+                        >
+                            <Typography variant={smDown ? "h5" : "h4"} align={alignTitle} style={{marginBottom: theme.spacing(5)}}>
+                                    <ReactTyped 
+                                        strings={[
+                                            "Full-Stack Developer 🌐",
+                                            "Problem Solver 👨🏽‍💻",
+                                            "Tennis Player 🎾",
+                                            "Sneakerhead 👟"
+                                        ]}
+                                        typeSpeed={40}
+                                        backSpeed={45}
+                                        loop
+                                    />
+                            </Typography>
+                        </motion.div>
+                        <Grid container direction="row" spacing={4} xs={12} justifyContent={alignIcons}>
+                            {
+                                socialMediaDetails.map(({icon, alt, link, title, path, bg}, i) => (
+                                    <Grid item key={i}>
+                                        <motion.div
+                                            
+                                            whileInView={{
+                                                opacity: [0,1],
+                                                y: [0, -20],
+                                                transition: {delay: 2 + 0.5*i},
+                                                whileHover: {scale: 1.2}
+                                            }}
+                                        >
+                                            <a href={link} target="_blank">
+                                                <Tooltip title={title}>
+                                                    <Avatar  variant="rounded"  style={{backgroundColor: `${bg}`}} className={classes.avatar} >
+                                                        <svg width={"20px"} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                                <title>{title}</title>
+                                                                <path d={path} fill="white"/>
+                                                        </svg>
+                                                    </Avatar>
+                                                </Tooltip>
+                                            </a>
+                                        </motion.div>
+                                    </Grid>
+                                ))
+                            }
+                        </Grid>
+                    </Grid>
+                    <Hidden mdDown>    
+                        <Grid item lg={6}>
+                            <motion.div
+
+                                whileInView={{
+                                    opacity: [0,1],
+                                    y: [50, -20],
+                                    transition: {delay: 1.3, duration: 1.5}
+                                }}
                             >
                                 {
-                                    letters.map((letter, index) => (
-                                        <motion.span
-                                            key={index}
-                                            variants={letterVariants}
-                                        >
-                                            {
-                                                letter === " " ? "\u00A0" : letter
-                                            }
-                                        </motion.span>
-                                    ))
+                                    darkMode === true ? 
+                                    (
+                                        <div>
+                                            <Introsvg width="570px" height="570px" className={classes.img}/>
+                                        </div>
+                                    )
+                                    :
+                                    (
+
+                                        <div>
+                                            <Meundraw width="570px" height="570px" className={classes.img}/>
+                                        </div>
+                                    )
                                 }
                             </motion.div>
-                    </Typography> : null
-                } */}
-
-                    
-                <motion.div
-                    whileInView={{
-                        opacity: [0,1],
-                        y: [0, -20],
-                        transition: {delay: 1.5 , duration: 0.5}
-                    }}
-                >
-                    <Typography variant={smDown ? "h5" : "h4"} align={alignTitle} style={{marginBottom: theme.spacing(5)}}>
-                            <ReactTyped 
-                                strings={[
-                                    "Full-Stack Developer 🌐",
-                                    "Problem Solver 👨🏽‍💻",
-                                    "Tennis Player 🎾",
-                                    "Sneakerhead 👟"
-                                ]}
-                                typeSpeed={40}
-                                backSpeed={45}
-                                loop
-                            />
-                    </Typography>
-                </motion.div>
-                <Grid container direction="row" spacing={4} xs={12} justifyContent={alignIcons}>
-                    {
-                        socialMediaDetails.map(({icon, alt, link, title, path, bg}, i) => (
-                            <Grid item key={i}>
-                                <motion.div
-                                    
-                                    whileInView={{
-                                        opacity: [0,1],
-                                        y: [0, -20],
-                                        transition: {delay: 2 + 0.5*i},
-                                        whileHover: {scale: 1.2}
-                                    }}
-                                >
-                                    <a href={link} target="_blank">
-                                        <Tooltip title={title}>
-                                            <Avatar  variant="rounded"  style={{backgroundColor: `${bg}`}} className={classes.avatar} >
-                                                <svg width={"20px"} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                        <title>{title}</title>
-                                                        <path d={path} fill="white"/>
-                                                </svg>
-                                            </Avatar>
-                                        </Tooltip>
-                                    </a>
-                                </motion.div>
-                            </Grid>
-                        ))
-                    }
+                        </Grid>
+                    </Hidden>
                 </Grid>
-            </Grid>
-            <Hidden mdDown>    
-                <Grid item lg={6}>
-                    <motion.div
-
-                        whileInView={{
-                            opacity: [0,1],
-                            y: [50, -20],
-                            transition: {delay: 1.3, duration: 1.5}
-                        }}
-                    >
-                        {
-                            darkMode === true ? 
-                            (
-                                <div>
-                                    <Introsvg width="570px" height="570px" className={classes.img}/>
-                                </div>
-                            )
-                            :
-                            (
-
-                                <div>
-                                    <Meundraw width="570px" height="570px" className={classes.img}/>
-                                </div>
-                            )
-                        }
-                    </motion.div>
-                </Grid>
-            </Hidden>
-        </Grid>
         </div>
        
     )

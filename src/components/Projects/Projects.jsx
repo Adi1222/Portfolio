@@ -224,7 +224,8 @@ const Projects = () => {
         
         <div id="projects">
 
-        <Grid  direction="row-reverse" container justify="center" alignItems="center" spacing={6}  className={classes.cont}>
+        
+            <Grid  direction="row-reverse" container justify="center" alignItems="center" spacing={4}  className={classes.cont}>
 
             <Grid item xs={12} lg={6} >
                 <Typography variant="h2" align="center" style={{paddingBottom: theme.spacing(5), marginTop: theme.spacing(10)}}>
@@ -232,7 +233,7 @@ const Projects = () => {
                 </Typography>
                 <Hidden mdDown>
                     <motion.div
-                         whileInView={{
+                        whileInView={{
                             opacity: [0,1],
                             x: ["20%", "0%"],
                             transition: {delay: 0.8, duration: 0.8},
@@ -259,7 +260,7 @@ const Projects = () => {
             </Grid>
 
             <Grid container item xs={12} lg={6}  spacing={4}>
-               
+            
                 
                     {
                         Object.getOwnPropertyNames(projectObj).map((project, i) => (
@@ -273,7 +274,7 @@ const Projects = () => {
                                             whileHover: {scale: 2}
                                         
                                         }}
-                                       
+                                    
                                         
                                     >
                                     <Card
@@ -321,12 +322,12 @@ const Projects = () => {
                 
                 
             </Grid>
-        
-        </Grid>
 
-        {/* <Grid container  spacing={6} alignItems="center" justifyContent="center" className={classes.cont}>
+            </Grid>
+
+            {/* <Grid container  spacing={6} alignItems="center" justifyContent="center" className={classes.cont}>
             <Grid item lg={6} xs={12}>
-               
+            
                     <Typography variant="h2" align="center" style={{paddingBottom: theme.spacing(5), marginTop: theme.spacing(10)}}>
                         Projects
                     </Typography>
@@ -344,7 +345,7 @@ const Projects = () => {
                                             whileHover: {scale: 2}
                                         
                                         }}
-                                       
+                                    
                                         
                                     >
                                     <Card
@@ -395,7 +396,7 @@ const Projects = () => {
             <Grid container item xs={12} lg={6} alignItems="center" justifyContent="center">
                 <Hidden mdDown>
                     <motion.div
-                         whileInView={{
+                        whileInView={{
                             opacity: [0,1],
                             x: ["20%", "0%"],
                             transition: {delay: 0.8, duration: 0.8},
@@ -420,7 +421,10 @@ const Projects = () => {
                     </motion.div>
                 </Hidden>
             </Grid>
-        </Grid> */}
+            </Grid> */}
+
+      
+        
         </div>
         
     )
