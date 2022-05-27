@@ -34,7 +34,7 @@ const About = () => {
         }
     ]
 
-    const aboutDetail = "I am a final year undergrad student persuing bachelors in Computer Engineering from Pune Institute of Computer Technology. Ever since I learnt C language (my first programming language) I was intrigued by the number of real world applications that we can solve with programming. So, I started digging deeper into the tech world and went on to build scalable web applications, participated in coding competitons and did internships. I dream to one day work on product which will be used by millions of people. Besides coding, I love to play Lawn Tennis, listen music (from Rock to synth-pop, I listen to all kinds of music) and read blogs."
+    const aboutDetail = "I am a final year undergrad student pursuing a bachelor's in Computer Engineering from the Pune Institute of Computer Technology. Ever since I learned C language (my first programming language) I was intrigued by the number of real-world applications that we can solve with programming. So, I started digging deeper into the tech world and went on to build scalable web applications, participated in coding competitions, and did internships. I dream of one day working on a product that will be used by millions of people. Besides coding, I love to play Lawn Tennis, listen to music (from Rock to synth-pop, I listen to all kinds of music) and read blogs."
 
     const letters = Array.from(aboutDetail);
 
@@ -72,7 +72,7 @@ const About = () => {
     }
 
     return (
-        <div ref={ref} id="about" >
+        <div ref={ref} id="about">
             
             <Grid container justifyContent='center' alignItems="center" className={classes.cont}>
                 <Grid item lg={6} xs={12}>
@@ -89,7 +89,7 @@ const About = () => {
                         }}
                         
                     >
-                        <Typography variant="h6" gutterBottom component="p">
+                        <Typography variant="h6" gutterBottom component="p" style={{marginTop: theme.spacing(5)}}>
                             {
                                 aboutDetail
                             }

@@ -186,7 +186,6 @@ const Intro = () => {
                                         strings={[
                                             "Full-Stack Developer 🌐",
                                             "Problem Solver 👨🏽‍💻",
-                                            "Tennis Player 🎾",
                                             "Sneakerhead 👟"
                                         ]}
                                         typeSpeed={40}

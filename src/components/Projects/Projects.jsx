@@ -224,7 +224,6 @@ const Projects = () => {
         
         <div id="projects">
 
-        
             <Grid  direction="row-reverse" container justify="center" alignItems="center" spacing={4}  className={classes.cont}>
 
             <Grid item xs={12} lg={6} >
@@ -423,8 +422,6 @@ const Projects = () => {
             </Grid>
             </Grid> */}
 
-      
-        
         </div>
         
     )

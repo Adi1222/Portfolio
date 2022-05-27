@@ -3,7 +3,7 @@ import { AppBar, useTheme, Avatar, Divider, Hidden, IconButton, List, ListItem, 
 import useStyles from "./styles"
 import CloseIcon from '@material-ui/icons/Close';
 import { useThemeMode } from '../../Hooks/ThemeContext';
-
+import {withStyles} from '@material-ui/core/styles'
 
 const RightNavbar = ({toggleDrawer}) => {
 
@@ -31,6 +31,15 @@ const RightNavbar = ({toggleDrawer}) => {
         }
     ]
 
+    // const ListItemCss = withStyles({
+    //     root: {
+    //         '&:hover, &:focus': {
+    //             backgroundColor: theme.palette.type === 'light' ? '#283593' : '#4fc3f7',
+    //             color: theme.palette.primary.contrastText,
+    //         }
+    //     }
+    // })();
+
 
 
     return (    
@@ -41,13 +50,13 @@ const RightNavbar = ({toggleDrawer}) => {
         onKeyDown={toggleDrawer(false)}
         >
         <List>
-            <ListItem button>
+            <ListItem >
                 <ListItemIcon onClick={toggleDrawer(false)}>
-                    <CloseIcon />        
+                    <CloseIcon/>        
                 </ListItemIcon>
             </ListItem>
         {tabs.map(({name, href}, index) => (
-          <ListItem button key={name} component="a" href={`#${href}`}>
+          <ListItem button key={name} component="a" href={`#${href}`} className={classes.listitem}>
             <ListItemText primary={name}/>
             <Divider />
           </ListItem>
