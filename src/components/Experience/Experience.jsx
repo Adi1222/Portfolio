@@ -29,7 +29,7 @@ const Experience = () => {
             "location": "Pune, India.",
             "href": "https://www.linkedin.com/company/ubs/?originalSubdomain=in",
             "img": "ubs.png",
-            "range": "7-06-2021 - 7-6-2021"
+            "range": "7-06-2021 - 7-08-2021"
         },
         {
             "company": "Shyena Tech Yarns",
@@ -38,7 +38,7 @@ const Experience = () => {
             "location": "Pune, India.",
             "href": "https://shyenatechyarns.com/",
             "img": "styr.jpg",
-            "range": "22-04-2020 - 31-7-2020"
+            "range": "22-04-2020 - 31-07-2020"
         }
     ]
 
