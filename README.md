@@ -32,4 +32,4 @@ yarn install
 npm start
 ```
 
-<li> Open [http://localhost:3000](http://localhost:3000) on your browser to see the result.
+<li> Open ![http://localhost:3000](http://localhost:3000) on your browser to see the result.
